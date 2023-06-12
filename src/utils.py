@@ -1,8 +1,21 @@
-
+import os
 import json
 import datetime
 
-with open("operations.json", encoding='utf-8') as file:
+
+# working_directory = os.getcwd()
+# file_path = working_directory + "operations.json"
+
+# dir_path = os.path.dirname(os.path.realpath(__file__))
+#
+# open(dir_path + '/' + 'data.json')
+#
+# with open(dir_path + '/' + 'operations.json', 'r') as file:
+#     data = json.load(file)
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+with open(dir_path + '/' + 'operations.json', 'r') as file:
     data = json.load(file)
 
 
@@ -41,7 +54,8 @@ def lastoper(data_corr, count):
         print()
 
 
-
 if __name__ == '__main__':
     data_corr = remove_invalid(data)
     lastoper(data_corr, 5)
+
+
